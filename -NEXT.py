@@ -8,7 +8,7 @@ import vk_captchasolver as vc
 import requests
 from vk_api.upload import VkUpload
 from twocaptcha import TwoCaptcha
-ownerbot = 463402065
+ownerbot = YOUR_VK_ID  #Твой id в vk
 def captcha_handler(captcha):
     captcha_link = captcha.get_url()
     print("module anticaptcha!")
@@ -87,9 +87,9 @@ while True:
                                         try:
                                             headers = {
                                                 'Token': f'{tokenRABSTVONEXT}',
-                                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+                                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit'
                                                 }
-                                            date = {'user_id': 454204598}
+                                            date = {'user_id': ownerbot}
                                             response = requests.post('https://rabstvonext.ru/getuser', headers=headers, data=date)
                                             data = response.json()
                                             vk.messages.send(message_id=event.message_id, peer_id=event.peer_id , message=f"Понг, токен активный)",random_id=0, captcha_handler=captcha_handler)
